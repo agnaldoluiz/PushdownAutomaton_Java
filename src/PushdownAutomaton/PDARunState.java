@@ -1,5 +1,7 @@
 package PushdownAutomaton;
 
+//Classe que representa os estados da máquina. É a classe que guarda a pilha.
+//Cada estado tem sua pilha
 public class PDARunState {
 
     //Parâmetros
@@ -17,10 +19,11 @@ public class PDARunState {
         this.state = state;
     }
 
+    //Método que printa na tela o estado
     @Override
     public String toString() {
-        return String.format("Input: %s, Level: %d, Stack: %s, State: %d, Result: %b /",
-                input, matchedSoFar, stack, state, failure);
+        return String.format("Input: %s, Level: %d, Stack: %s, State: %d /",
+                input, matchedSoFar, stack, state);
     }
 
 }

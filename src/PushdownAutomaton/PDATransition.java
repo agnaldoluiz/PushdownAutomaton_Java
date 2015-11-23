@@ -1,5 +1,6 @@
 package PushdownAutomaton;
 
+//Classe que representa uma transição no PDA
 public class PDATransition {
 
     //Parâmetros
@@ -20,18 +21,11 @@ public class PDATransition {
         this.newState = newState;
     }
 
+    //Método que recebe um estado e liga aquele estado com as possíveis transições
     public boolean matchesConfiguration(PDARunState state) {
         return inputChar == state.input.charAt(0) &&
                 oldState == state.state &&
                 ((stackHead == '_' && state.stack.length() == 0) ||
                         (state.stack.length() > 0 && stackHead == state.stack.charAt(0)));
-    }
-
-
-    @Override
-    public String toString() {
-        return String.format("<%s,%d,%c>-<%d,%s>", inputChar != null? inputChar.toString():"", oldState,
-                stackHead, newState,
-                stackReplace);
     }
 }

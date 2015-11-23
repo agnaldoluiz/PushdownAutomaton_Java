@@ -1,4 +1,5 @@
 package PushdownAutomaton;
+//Classe simples que representa resultados das transições. Importante para o sucesso da computação
 
 public class PDAResult {
 
@@ -12,11 +13,5 @@ public class PDAResult {
         this.consumedLength = consumedLength;
         this.stackCount = stackCount;
         this.success = success;
-    }
-
-    @Override
-    public String toString(){
-        return String.format("Success: %b, Consumed: %d, Stack Size: %d",
-                success, consumedLength, stackCount);
     }
 }
